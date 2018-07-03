@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components:Square renders the Square with the proper cursor if a click handler is provided 1`] = `
+.c0 {
+  border-color: #191919;
+  border-style: solid;
+  border-width: 0 3px 3px 0;
+  cursor: default;
+  font-size: 16vh;
+  font-weight: bold;
+  line-height: 20vh;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+  cursor: pointer;
+}
+
+<div
+  className="c0"
+  onClick={[Function]}
+/>
+`;
+
+exports[`components:Square renders the Square with the proper styles for an unplayed square after game over 1`] = `
+.c0 {
+  border-color: #191919;
+  border-style: solid;
+  border-width: 0 3px 3px 0;
+  cursor: default;
+  font-size: 16vh;
+  font-weight: bold;
+  line-height: 20vh;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`components:Square renders the Square with the proper styles for player O in the top left square 1`] = `
+.c0 {
+  border-color: #191919;
+  border-style: solid;
+  border-width: 0 3px 3px 0;
+  cursor: default;
+  font-size: 16vh;
+  font-weight: bold;
+  line-height: 20vh;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+  color: #e2e1e0;
+}
+
+<div
+  className="c0"
+>
+  o
+</div>
+`;
+
+exports[`components:Square renders the Square with the proper styles for player O loss 1`] = `
+.c0 {
+  border-color: #191919;
+  border-style: solid;
+  border-width: 0 0 0 0;
+  cursor: default;
+  font-size: 16vh;
+  font-weight: bold;
+  line-height: 20vh;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+  color: hsla(0,0%,90%,1);
+}
+
+<div
+  className="c0"
+>
+  o
+</div>
+`;
+
+exports[`components:Square renders the Square with the proper styles for player X in the bottom left square 1`] = `
+.c0 {
+  border-color: #191919;
+  border-style: solid;
+  border-width: 0 3px 0 0;
+  cursor: default;
+  font-size: 16vh;
+  font-weight: bold;
+  line-height: 20vh;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+  color: #fc3645;
+}
+
+<div
+  className="c0"
+>
+  x
+</div>
+`;
+
+exports[`components:Square renders the Square with the proper styles for player X in the bottom right square 1`] = `
+.c0 {
+  border-color: #191919;
+  border-style: solid;
+  border-width: 0 0 0 0;
+  cursor: default;
+  font-size: 16vh;
+  font-weight: bold;
+  line-height: 20vh;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+  color: #fc3645;
+}
+
+<div
+  className="c0"
+>
+  x
+</div>
+`;
+
+exports[`components:Square renders the Square with the proper styles for player X in the top left square 1`] = `
+.c0 {
+  border-color: #191919;
+  border-style: solid;
+  border-width: 0 3px 3px 0;
+  cursor: default;
+  font-size: 16vh;
+  font-weight: bold;
+  line-height: 20vh;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+  color: #fc3645;
+}
+
+<div
+  className="c0"
+>
+  x
+</div>
+`;
+
+exports[`components:Square renders the Square with the proper styles for player X in the top right square 1`] = `
+.c0 {
+  border-color: #191919;
+  border-style: solid;
+  border-width: 0 0 3px 0;
+  cursor: default;
+  font-size: 16vh;
+  font-weight: bold;
+  line-height: 20vh;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+  color: #fc3645;
+}
+
+<div
+  className="c0"
+>
+  x
+</div>
+`;
+
+exports[`components:Square renders the Square with the proper styles for player X win 1`] = `
+.c0 {
+  border-color: #191919;
+  border-style: solid;
+  border-width: 0 0 0 0;
+  cursor: default;
+  font-size: 16vh;
+  font-weight: bold;
+  line-height: 20vh;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+  color: #fc3645;
+}
+
+<div
+  className="c0"
+>
+  x
+</div>
+`;

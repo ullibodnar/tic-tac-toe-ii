@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components:AppHeader renders the AppHeader with the correct styles 1`] = `
+.c0 {
+  margin: auto;
+  text-align: center;
+  font-family: Arial,Helvetica,sans-serif;
+  color: #191919;
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="headerText"
+  >
+    Tic-Tac-Toe MK. II
+  </h1>
+</div>
+`;
