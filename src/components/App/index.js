@@ -2,8 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { times } from 'ramda'
 
-import { AppContainer, Board } from '..'
+import { StyledAppContainer, Board } from '..'
 import { Square, ResetButton } from '../../containers'
+
+const appName = 'Tic-Tac-Toe Mk. ii'
 
 const StyledApp = styled.div`
   display: grid;
@@ -29,7 +31,10 @@ export default function App () {
     <div>
       {/* outer div */}
 
-      <AppContainer />
+      <StyledAppContainer>
+        <h1 className='headerText'>{appName}</h1>
+        <p>hi</p>
+      </StyledAppContainer>
 
       <StyledApp>
         <Board>
@@ -37,8 +42,9 @@ export default function App () {
         </Board>
       </StyledApp>
 
-      <ResetButton />
-
+      <StyledAppContainer>
+        <ResetButton />
+      </StyledAppContainer>
       {/* outer div */}
     </div>
   )
