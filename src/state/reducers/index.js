@@ -1,6 +1,6 @@
 import { isUndefined } from 'ramda-adjunct'
 
-import { GAME_OVER, SQUARE_CLICKED, RESET_CLICKED } from '..'
+import { GAME_OVER, SQUARE_CLICKED, RESET_CLICKED, BLOCK_AVAILABLE } from '..'
 
 const initialState = { moves: [] }
 
@@ -19,6 +19,13 @@ function rootReducer (state = initialState, { payload = {}, type }) {
       return {
         ...state,
         moves: isUndefined(square) ? state.moves : [...state.moves, square]
+      }
+
+    case BLOCK_AVAILABLE:
+      return {
+        ...state,
+        blockableSquare: squares,
+        blockablePlayer: player
       }
 
     case RESET_CLICKED:

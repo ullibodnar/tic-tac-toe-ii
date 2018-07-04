@@ -12,6 +12,18 @@ function gameOver (squares, player) {
   }
 }
 
+function blockAvailable (square) {
+  return {
+    type: BLOCK_AVAILABLE,
+    payload: {
+      blockableSquare: {
+        squares,
+        player
+      }
+    }
+  }
+}
+
 function squareClicked (square) {
   return {
     type: SQUARE_CLICKED,

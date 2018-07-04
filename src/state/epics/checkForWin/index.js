@@ -12,14 +12,24 @@ export default function checkForWinEpic (action$, state$) {
     const moves = getMoves(state$.value) // get the moves array from the store
     const plays = length(moves) // length of the moves array tells us how many plays
 
-    if (plays < 5) {
+    /* if (plays < 5) {
       // do nothing - can't win with fewer than five plays
 
       return Observable.of()
     }
+    */
 
     const board = getBoard(moves) // convert the moves array to a board array
     const wins = getWins(board) // get zero or more winning patterns
+
+    console.log(`board: ${board}`)
+    console.log(`wins: ${wins}`)
+
+    const bool = true
+
+    if (bool) {
+      return Observable.of()
+    }
 
     if (isNonEmptyArray(wins)) {
       // found at least one winning pattern!
@@ -30,11 +40,6 @@ export default function checkForWinEpic (action$, state$) {
       const player = board[head(squares)]
 
       return Observable.of(gameOver(squares, player))
-    }
-
-    let a = 1
-    if (a == 1) {
-      a++
     }
 
     if (plays > 8) {
