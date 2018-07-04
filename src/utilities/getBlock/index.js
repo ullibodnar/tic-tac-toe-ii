@@ -15,6 +15,10 @@ export default function getBlock (board) {
   return filter(pattern => {
     const [s1, s2, s3] = pattern
 
-    return Boolean(board[s1]) === board[s2] && board[s3] === undefined
+    return (
+      (Boolean(board[s1]) && board[s1] === (board[s2] || board[s3])) ||
+      (Boolean(board[s2]) && board[s2] === (board[s1] || board[s3])) ||
+      (Boolean(board[s3]) && board[s3] === (board[s1] || board[s2]))
+    )
   }, patterns)
 }

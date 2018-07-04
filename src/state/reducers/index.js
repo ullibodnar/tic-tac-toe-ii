@@ -24,7 +24,7 @@ function rootReducer (state = initialState, { payload = {}, type }) {
     case BLOCK_AVAILABLE:
       return {
         ...state,
-        blockableSquare: squares,
+        blockableSquare: square,
         blockablePlayer: player
       }
 

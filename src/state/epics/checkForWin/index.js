@@ -4,8 +4,8 @@ import 'rxjs/add/observable/of'
 import { head, length, union } from 'ramda'
 import { isNonEmptyArray } from 'ramda-adjunct'
 
-import { getMoves, gameOver, SQUARE_CLICKED } from '../..'
-import { getBoard, getWins } from '../../../utilities'
+import { getMoves, gameOver, SQUARE_CLICKED, blockAvailable } from '../..'
+import { getBoard, getWins, getBlock } from '../../../utilities'
 
 export default function checkForWinEpic (action$, state$) {
   return action$.ofType(SQUARE_CLICKED).mergeMap(({ payload }) => {
@@ -21,15 +21,11 @@ export default function checkForWinEpic (action$, state$) {
 
     const board = getBoard(moves) // convert the moves array to a board array
     const wins = getWins(board) // get zero or more winning patterns
+    const block = getBlock(board)
 
     console.log(`board: ${board}`)
+    console.log(`block: ${block}`)
     console.log(`wins: ${wins}`)
-
-    const bool = true
-
-    if (bool) {
-      return Observable.of()
-    }
 
     if (isNonEmptyArray(wins)) {
       // found at least one winning pattern!
@@ -48,6 +44,14 @@ export default function checkForWinEpic (action$, state$) {
       // return a wrapped empty gameOver action to indicate a tie
 
       return Observable.of(gameOver([]))
+    }
+
+    if (isNonEmptyArray(block)) {
+      // blockable pattern
+      const squares = head(block)
+      const player = board[head(squares)]
+      console.log(blockAvailable(squares, player))
+      return Observable.of(blockAvailable(squares, player))
     }
 
     // do nothing (none of the above conditions met)

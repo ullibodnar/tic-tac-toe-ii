@@ -1,4 +1,4 @@
-import { GAME_OVER, SQUARE_CLICKED, RESET_CLICKED } from '..'
+import { GAME_OVER, SQUARE_CLICKED, RESET_CLICKED, BLOCK_AVAILABLE } from '..'
 
 function gameOver (squares, player) {
   return {
@@ -12,7 +12,7 @@ function gameOver (squares, player) {
   }
 }
 
-function blockAvailable (square) {
+function blockAvailable (squares, player) {
   return {
     type: BLOCK_AVAILABLE,
     payload: {
@@ -39,4 +39,4 @@ function resetClicked () {
   }
 }
 
-export { gameOver, squareClicked, resetClicked }
+export { gameOver, squareClicked, resetClicked, blockAvailable }

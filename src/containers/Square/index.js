@@ -3,18 +3,29 @@ import { contains } from 'ramda'
 // import { isNotEmpty } from 'ramda-adjunct'
 
 import Square from '../../components/Square'
-import { getMoves, getWinningSquares, squareClicked } from '../../state'
+import {
+  getMoves,
+  getWinningSquares,
+  squareClicked,
+  getBlockableSquare
+} from '../../state'
 import { getPlayer } from '../../utilities'
 
 function mapStateToProps (state, { index }) {
   const moves = getMoves(state)
   const winners = getWinningSquares(state) || null // []
+  const block = getBlockableSquare(state) || null
+  const blockAvailable = !!block
   const gameIsOver = !!winners // isNotEmpty(winners)
   const player = getPlayer(index, moves)
 
-  return gameIsOver
-    ? { player, isWinningSquare: contains(index, winners) }
-    : { player }
+  if (blockAvailable) {
+    return { player, index }
+  }
+  if (gameIsOver) {
+    return { player, isWinningSquare: contains(index, winners) }
+  }
+  return { player }
 }
 
 function mapDispatchToProps (dispatch, { index }) {

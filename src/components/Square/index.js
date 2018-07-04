@@ -49,10 +49,6 @@ export default function Square ({
       : <SquarePlayed index={index} player={player}>{player}</SquarePlayed>
   }
 
-  if (isUndefined(player)) {
-    return <StyledSquare index={index} />
-  }
-
   return isWinningSquare
     ? <SquarePlayed index={index} player={player}>{player}</SquarePlayed>
     : <SquareLost index={index} player={player}>{player}</SquareLost>
