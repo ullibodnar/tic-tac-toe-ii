@@ -1,3 +1,4 @@
 import checkForWinEpic from './checkForWin'
+import { scoreX, scoreO } from './checkForWin'
 
-export { checkForWinEpic }
+export { checkForWinEpic, scoreX, scoreO }

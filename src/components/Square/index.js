@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { isUndefined } from 'ramda-adjunct'
 
 const StyledSquare = styled.div`
-  border-color: #191919;
+  border-color: hsla(0, 0%, 90%, 1);
   border-style: solid;
   border-width: 0 ${({ index }) => (index % 3 === 2 ? 0 : '3px')}
     ${({ index }) => (index < 6 ? '3px' : 0)} 0;
@@ -18,7 +18,7 @@ const StyledSquare = styled.div`
 StyledSquare.defaultName = 'StyledSquare'
 
 const SquarePlayed = StyledSquare.extend`
-  color: ${({ player }) => (player === 'x' ? '#FF8080' : '#80FFFF')};
+  color: ${({ player }) => (player === 'x' ? '#fe3449' : '#191919')}; {/*#80FFFF*/}
 
 `
 

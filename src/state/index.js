@@ -10,6 +10,9 @@ import {
   RESET_CLICKED,
   BLOCK_AVAILABLE
 } from './constants'
+
+import { scoreX, scoreO } from './epics'
+
 import { initialState, rootReducer } from './reducers'
 import {
   getMoves,
@@ -36,5 +39,7 @@ export {
   BLOCK_AVAILABLE,
   blockAvailable,
   getBlockableSquare,
-  getBlockablePlayer
+  getBlockablePlayer,
+  scoreO,
+  scoreX
 }

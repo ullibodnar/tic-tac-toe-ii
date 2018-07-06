@@ -20,7 +20,7 @@ function mapStateToProps (state, { index }) {
   const player = getPlayer(index, moves)
 
   if (blockAvailable) {
-    return { player, index }
+    return { player, isBlockableSquare: contains(index, block) }
   }
   if (gameIsOver) {
     return { player, isWinningSquare: contains(index, winners) }
