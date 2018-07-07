@@ -19,6 +19,7 @@ export default function App () {
 
       <StyledAppContainer className='StyledAppContainer'>
         <ResetButton />
+        {/* 
         <h2>Score:</h2>
         <ScoreCard>
           <p className='score'>X: {scoreX}</p>
@@ -26,6 +27,7 @@ export default function App () {
         <ScoreCard>
           <p className='score'>O: {scoreO}</p>
         </ScoreCard>
+        */}
         <BoardContainer className='BoardContainer'>
           <Board className='Board'>
             {times(square => <Square key={square} index={square} />, 9)}
@@ -33,10 +35,12 @@ export default function App () {
         </BoardContainer>
       </StyledAppContainer>
 
+      {/*
       <StyledAppContainer>
         <h1>Settings:</h1>
         <p>None, yet!</p>
       </StyledAppContainer>
+      */}
       {/* outer div */}
     </div>
   )
