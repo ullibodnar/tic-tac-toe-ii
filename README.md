@@ -1,6 +1,6 @@
 # Tic-Tac-Toe Mk. II
-This is a classic Tic-Tac-Toe game, currently only single player.
+This is a classic Tic-Tac-Toe game, built with React.
 
-You can use it, modify it, and change it, but don't call it your own work. More on licensing in LICENCE.
+*Currently* only single player.
 
 Created with :heart: by Ulli Bodnar.
