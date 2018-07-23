@@ -13,13 +13,13 @@ const StyledSquare = styled.div`
   line-height: 20vh;
   text-align: center;
   text-transform: uppercase;
-  {/*text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/}
+  color: ${({ player }) => (player === 'x' ? '#fe3449' : '#191919')}; {/*#80FFFF*/}
+  /*transition: all .3s cubic-bezier(.25,.8,.25,1); <-- Would be nice to have some clean transitions soon */
 `
 StyledSquare.defaultName = 'StyledSquare'
 
 const SquarePlayed = StyledSquare.extend`
-  color: ${({ player }) => (player === 'x' ? '#fe3449' : '#191919')}; {/*#80FFFF*/}
-
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 `
 
 const SquareLost = StyledSquare.extend`
@@ -31,7 +31,11 @@ const SquarePlayable = StyledSquare.extend`
 `
 
 const BlockSuggestion = SquarePlayable.extend`
-  border: 1px dashed red;
+  border:1px solid red;
+`
+
+const WinningSquare = SquarePlayed.extend`
+  text-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 `
 
 export default function Square ({
@@ -50,6 +54,6 @@ export default function Square ({
   }
 
   return isWinningSquare
-    ? <SquarePlayed index={index} player={player}>{player}</SquarePlayed>
+    ? <WinningSquare index={index} player={player}>{player}</WinningSquare>
     : <SquareLost index={index} player={player}>{player}</SquareLost>
 }

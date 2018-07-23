@@ -7,9 +7,6 @@ import { isNonEmptyArray } from 'ramda-adjunct'
 import { getMoves, gameOver, SQUARE_CLICKED, blockAvailable } from '../..'
 import { getBoard, getWins, getBlock } from '../../../utilities'
 
-let scoreX = 0
-let scoreO = 0
-
 export default function checkForWinEpic (action$, state$) {
   return action$.ofType(SQUARE_CLICKED).mergeMap(({ payload }) => {
     const moves = getMoves(state$.value) // get the moves array from the store
@@ -38,12 +35,6 @@ export default function checkForWinEpic (action$, state$) {
       const squares = length(wins) < 2 ? head(wins) : union(...wins)
       const player = board[head(squares)]
 
-      if (player === 'x') {
-        scoreX++
-      } else {
-        scoreO++
-      }
-
       return Observable.of(gameOver(squares, player))
     }
 
@@ -67,5 +58,3 @@ export default function checkForWinEpic (action$, state$) {
     return Observable.of()
   })
 }
-
-export { scoreX, scoreO }

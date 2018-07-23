@@ -10,16 +10,3 @@
 body {
   background :hsla(0, 0%, 90%, 1);
 }
-
-
-
-.headerText{
-  font-size: 7em;
-  text-align: center;
-}
-
-.headerDiv {
-  border-color: #fe3449;
-  border-width: 0 2px 2px 2px;
-  border-style: dashed;
-}

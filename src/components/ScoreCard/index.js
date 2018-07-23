@@ -1,8 +1,17 @@
-import styled from 'styled-components'
+import React from 'react'
 
-const ScoreCard = styled.div`
-  display: inline-block;
-  text-align: center;
-  width: 50px;
-`
-export default ScoreCard
+import StyledScoreCard from './style'
+
+export default function ScoreCard (props) {
+  return (
+    <div>
+      <h2>Score:</h2>
+      <StyledScoreCard>
+        <p score={props.scoreX}>X: {props.scoreX}</p>
+      </StyledScoreCard>
+      <StyledScoreCard>
+        <p score={props.scoreO}>O: {props.scoreO}</p>
+      </StyledScoreCard>
+    </div>
+  )
+}

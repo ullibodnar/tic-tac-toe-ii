@@ -2,159 +2,20 @@
 
 exports[`components:App renders the App with a blank game board and nine squares 1`] = `
 <div>
-  <AppHeader />
-  <styled.div>
-    <styled.div>
-      <Connect(Square)
-        index={0}
-        key="0"
-      />
-      <Connect(Square)
-        index={1}
-        key="1"
-      />
-      <Connect(Square)
-        index={2}
-        key="2"
-      />
-      <Connect(Square)
-        index={3}
-        key="3"
-      />
-      <Connect(Square)
-        index={4}
-        key="4"
-      />
-      <Connect(Square)
-        index={5}
-        key="5"
-      />
-      <Connect(Square)
-        index={6}
-        key="6"
-      />
-      <Connect(Square)
-        index={7}
-        key="7"
-      />
-      <Connect(Square)
-        index={8}
-        key="8"
-      />
-    </styled.div>
-  </styled.div>
-  <Connect(ResetButton) />
+  <Header
+    name="Tic-Tac-Toe Mk. II"
+  />
+  <Game />
+  <Settings />
 </div>
 `;
 
 exports[`components:App renders the App with a game board three moves: center, top-left, top-right 1`] = `
 <div>
-  <AppHeader />
-  <styled.div>
-    <styled.div>
-      <Connect(Square)
-        index={0}
-        key="0"
-      />
-      <Connect(Square)
-        index={1}
-        key="1"
-      />
-      <Connect(Square)
-        index={2}
-        key="2"
-      />
-      <Connect(Square)
-        index={3}
-        key="3"
-      />
-      <Connect(Square)
-        index={4}
-        key="4"
-      />
-      <Connect(Square)
-        index={5}
-        key="5"
-      />
-      <Connect(Square)
-        index={6}
-        key="6"
-      />
-      <Connect(Square)
-        index={7}
-        key="7"
-      />
-      <Connect(Square)
-        index={8}
-        key="8"
-      />
-    </styled.div>
-  </styled.div>
-  <Connect(ResetButton) />
-</div>
-`;
-
-exports[`components:App renders the styles for the StyledApp 1`] = `
-.c0 {
-  display: grid;
-  font-family: 'Verdana',sans-serif;
-  grid-template-areas: 'board';
-  height: 80vh;
-  margin: auto;
-  padding: 0;
-  width: 80vw;
-  background: white;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
-}
-
-@media only screen and (max-width:700px) {
-  .c0 {
-    margin: 0;
-    width: 100vw;
-    height: 100vw;
-  }
-}
-
-<div
-  className="c0"
->
-  <styled.div>
-    <Connect(Square)
-      index={0}
-      key="0"
-    />
-    <Connect(Square)
-      index={1}
-      key="1"
-    />
-    <Connect(Square)
-      index={2}
-      key="2"
-    />
-    <Connect(Square)
-      index={3}
-      key="3"
-    />
-    <Connect(Square)
-      index={4}
-      key="4"
-    />
-    <Connect(Square)
-      index={5}
-      key="5"
-    />
-    <Connect(Square)
-      index={6}
-      key="6"
-    />
-    <Connect(Square)
-      index={7}
-      key="7"
-    />
-    <Connect(Square)
-      index={8}
-      key="8"
-    />
-  </styled.div>
+  <Header
+    name="Tic-Tac-Toe Mk. II"
+  />
+  <Game />
+  <Settings />
 </div>
 `;

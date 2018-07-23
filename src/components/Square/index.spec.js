@@ -54,6 +54,12 @@ describe('components:Square', () => {
     ).toMatchSnapshot()
   })
 
+  it('renders the Square with the proper styles for player X blockable', () => {
+    expect(
+      toJson(shallow(<Square player='' index={8} isBlockableSquare />).dive())
+    ).toMatchSnapshot()
+  })
+
   it('renders the Square with the proper styles for an unplayed square after game over', () => {
     expect(
       toJson(shallow(<Square index={4} isWinningSquare={false} />).dive())

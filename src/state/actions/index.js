@@ -12,13 +12,13 @@ function gameOver (squares, player) {
   }
 }
 
-function blockAvailable (squares, player) {
+function blockAvailable (blockableSquares, blockablePlayer) {
   return {
     type: BLOCK_AVAILABLE,
     payload: {
-      blockableSquare: {
-        squares,
-        player
+      block: {
+        blockableSquares,
+        blockablePlayer
       }
     }
   }

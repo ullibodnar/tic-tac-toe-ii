@@ -5,7 +5,11 @@ import { GAME_OVER, SQUARE_CLICKED, RESET_CLICKED, BLOCK_AVAILABLE } from '..'
 const initialState = { moves: [] }
 
 function rootReducer (state = initialState, { payload = {}, type }) {
-  const { square, winners: { squares, player } = {} } = payload
+  const {
+    square,
+    block: { blockableSquares, blockablePlayer } = {},
+    winners: { squares, player } = {}
+  } = payload
 
   switch (type) {
     case GAME_OVER:
@@ -24,8 +28,8 @@ function rootReducer (state = initialState, { payload = {}, type }) {
     case BLOCK_AVAILABLE:
       return {
         ...state,
-        blockableSquare: squares,
-        blockablePlayer: player
+        blockableSquares: blockableSquares,
+        blockablePlayer: blockablePlayer
       }
 
     case RESET_CLICKED:

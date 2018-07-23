@@ -11,8 +11,6 @@ import {
   BLOCK_AVAILABLE
 } from './constants'
 
-import { scoreX, scoreO } from './epics'
-
 import { initialState, rootReducer } from './reducers'
 import {
   getMoves,
@@ -39,7 +37,5 @@ export {
   BLOCK_AVAILABLE,
   blockAvailable,
   getBlockableSquare,
-  getBlockablePlayer,
-  scoreO,
-  scoreX
+  getBlockablePlayer
 }
