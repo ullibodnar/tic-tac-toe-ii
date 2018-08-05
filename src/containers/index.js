@@ -1,4 +1,7 @@
 import Square from './Square'
-import ResetButton from './ResetButton'
+import ResetBoard from './ResetBoard'
+import ResetGame from './ResetGame'
+import ScoreCard from './ScoreCard'
+import Settings from './Settings'
 
-export { Square, ResetButton }
+export { Square, ResetBoard, ResetGame, ScoreCard, Settings }

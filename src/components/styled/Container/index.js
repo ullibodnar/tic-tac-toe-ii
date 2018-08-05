@@ -9,6 +9,10 @@ const Container = styled.div`
   background: white;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
+  & p {
+    font-size: 18px;
+  }
+
   @media only screen and (max-width: 700px) {
     width: 100vw;
   }
@@ -29,5 +33,6 @@ export const Game = Container.extend`
 Game.displayName = 'StyledGame'
 
 export const Settings = Container.extend`
+  font-size: 18px;
 `
 Settings.displayName = 'StyledSettings'

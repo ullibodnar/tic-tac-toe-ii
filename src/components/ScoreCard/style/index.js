@@ -1,10 +1,15 @@
 import styled from 'styled-components'
 
-const ScoreCard = styled.div`
+const Score = styled.div`
   display: inline-block;
   text-align: center;
   width: 50px;
 `
+Score.displayName = 'StyledScore'
+
+const ScoreCard = styled.div`
+  display: inline-block;
+`
 ScoreCard.displayName = 'StyledScoreCard'
 
-export default ScoreCard
+export { Score, ScoreCard }

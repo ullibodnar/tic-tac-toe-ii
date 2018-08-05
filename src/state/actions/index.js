@@ -1,4 +1,24 @@
-import { GAME_OVER, SQUARE_CLICKED, RESET_CLICKED, BLOCK_AVAILABLE } from '..'
+import {
+  GAME_OVER,
+  SQUARE_CLICKED,
+  RESET_BOARD_CLICKED,
+  RESET_GAME_CLICKED,
+  X_WON,
+  O_WON,
+  GAME_LENGTH_CHANGE
+} from '..'
+
+function xWon () {
+  return {
+    type: X_WON
+  }
+}
+
+function oWon () {
+  return {
+    type: O_WON
+  }
+}
 
 function gameOver (squares, player) {
   return {
@@ -7,18 +27,6 @@ function gameOver (squares, player) {
       winners: {
         squares,
         player
-      }
-    }
-  }
-}
-
-function blockAvailable (blockableSquares, blockablePlayer) {
-  return {
-    type: BLOCK_AVAILABLE,
-    payload: {
-      block: {
-        blockableSquares,
-        blockablePlayer
       }
     }
   }
@@ -33,10 +41,31 @@ function squareClicked (square) {
   }
 }
 
-function resetClicked () {
+function resetBoardClicked () {
   return {
-    type: RESET_CLICKED
+    type: RESET_BOARD_CLICKED
   }
 }
 
-export { gameOver, squareClicked, resetClicked, blockAvailable }
+function resetGameClicked () {
+  return {
+    type: RESET_GAME_CLICKED
+  }
+}
+
+function gameLengthChange (gameLength) {
+  return {
+    type: GAME_LENGTH_CHANGE,
+    payload: gameLength
+  }
+}
+
+export {
+  gameOver,
+  squareClicked,
+  resetBoardClicked,
+  resetGameClicked,
+  xWon,
+  oWon,
+  gameLengthChange
+}

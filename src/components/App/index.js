@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { Header, Game, Settings } from '..'
+import { Header, Game } from '..'
+import { Settings } from '../../containers'
 
 export default function App () {
   return (

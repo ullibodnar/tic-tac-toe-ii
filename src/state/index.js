@@ -1,24 +1,27 @@
 import {
   gameOver,
   squareClicked,
-  resetClicked,
-  blockAvailable
+  resetBoardClicked,
+  resetGameClicked,
+  xWon,
+  oWon,
+  gameLengthChange
 } from './actions'
+
 import {
   GAME_OVER,
   SQUARE_CLICKED,
-  RESET_CLICKED,
-  BLOCK_AVAILABLE
+  RESET_BOARD_CLICKED,
+  RESET_GAME_CLICKED,
+  X_WON,
+  O_WON,
+  GAME_LENGTH_CHANGE
 } from './constants'
 
 import { initialState, rootReducer } from './reducers'
-import {
-  getMoves,
-  getWinningPlayer,
-  getWinningSquares,
-  getBlockableSquare,
-  getBlockablePlayer
-} from './selectors'
+
+import { getMoves, getWinningPlayer, getWinningSquares } from './selectors'
+
 import configureStore from './store'
 
 export {
@@ -32,10 +35,14 @@ export {
   rootReducer,
   SQUARE_CLICKED,
   squareClicked,
-  RESET_CLICKED,
-  resetClicked,
-  BLOCK_AVAILABLE,
-  blockAvailable,
-  getBlockableSquare,
-  getBlockablePlayer
+  RESET_BOARD_CLICKED,
+  RESET_GAME_CLICKED,
+  resetBoardClicked,
+  resetGameClicked,
+  X_WON,
+  O_WON,
+  xWon,
+  oWon,
+  GAME_LENGTH_CHANGE,
+  gameLengthChange
 }

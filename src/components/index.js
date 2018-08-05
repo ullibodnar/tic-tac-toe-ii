@@ -3,20 +3,22 @@ import Board from './Board'
 import Square from './Square'
 import BoardContainer from './BoardContainer'
 
-import ResetButton from './ResetButton'
-import ScoreCard from './ScoreCard'
+import ResetBoard from './ResetBoard'
 import Game from './Game'
 import Header from './Header'
 import Settings from './Settings'
+import ScoreCard from './ScoreCard'
+import ResetGame from './ResetGame'
 
 export {
   App,
   Board,
   Square,
-  ResetButton,
+  ResetBoard,
   BoardContainer,
-  ScoreCard,
   Game,
   Header,
-  Settings
+  Settings,
+  ScoreCard,
+  ResetGame
 }

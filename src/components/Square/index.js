@@ -30,10 +30,6 @@ const SquarePlayable = StyledSquare.extend`
   cursor: pointer;
 `
 
-const BlockSuggestion = SquarePlayable.extend`
-  border:1px solid red;
-`
-
 const WinningSquare = SquarePlayed.extend`
   /*text-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
 `
@@ -42,14 +38,11 @@ export default function Square ({
   handleClick,
   index,
   isWinningSquare,
-  player,
-  isBlockableSquare
+  player
 }) {
   if (isUndefined(isWinningSquare)) {
     return isUndefined(player)
-      ? isUndefined(isBlockableSquare)
-          ? <SquarePlayable index={index} onClick={handleClick} />
-          : <BlockSuggestion index={index} onClick={handleClick} />
+      ? <SquarePlayable index={index} onClick={handleClick} />
       : <SquarePlayed index={index} player={player}>{player}</SquarePlayed>
   }
 

@@ -8,8 +8,9 @@ const Button = styled.button`
   color: white;
   border: none;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  margin-bottom: 20px;
+  transition: 0.4s ease;
+  float: right;
+  vertical-align: middle;
 
   &:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -23,4 +24,16 @@ const Button = styled.button`
 `
 Button.displayName = 'StyledButton'
 
-export default Button
+const ResetBoard = Button.extend`
+  
+`
+ResetBoard.displayName = 'StyledResetBoard'
+
+const ButtonCritical = Button.extend`
+  &:hover {
+    background: #fe3449;
+  }
+`
+ButtonCritical.displayName = 'StyledButtonCritical'
+
+export { Button, ButtonCritical, ResetBoard }

@@ -2,15 +2,20 @@ import React from 'react'
 import { times } from 'ramda'
 
 import { StyledGame } from '../styled'
-import { Board, BoardContainer, ScoreCard } from '..'
-import { Square, ResetButton } from '../../containers'
+import { Board, BoardContainer } from '..'
+import { Square, ResetBoard } from '../../containers'
+
+import { ScoreCard } from '../../containers'
 
 export default function Game () {
   return (
     <StyledGame>
-      <ResetButton />
 
-      <ScoreCard />
+      <div>
+        <ScoreCard />
+
+        <ResetBoard />
+      </div>
 
       <BoardContainer>
         <Board>

@@ -4,11 +4,18 @@ import 'rxjs/add/observable/of'
 import { head, length, union } from 'ramda'
 import { isNonEmptyArray } from 'ramda-adjunct'
 
-import { getMoves, gameOver, SQUARE_CLICKED, blockAvailable } from '../..'
-import { getBoard, getWins, getBlock } from '../../../utilities'
+import {
+  getMoves,
+  gameOver,
+  SQUARE_CLICKED,
+  xWon,
+  oWon
+  // resetBoardClicked
+} from '../..'
+import { getBoard, getWins } from '../../../utilities'
 
 export default function checkForWinEpic (action$, state$) {
-  return action$.ofType(SQUARE_CLICKED).mergeMap(({ payload }) => {
+  return action$.ofType(SQUARE_CLICKED).mergeMap(() => {
     const moves = getMoves(state$.value) // get the moves array from the store
     const plays = length(moves) // length of the moves array tells us how many plays
 
@@ -21,10 +28,8 @@ export default function checkForWinEpic (action$, state$) {
 
     const board = getBoard(moves) // convert the moves array to a board array
     const wins = getWins(board) // get zero or more winning patterns
-    const block = getBlock(board)
 
     console.log(`board: ${board}`)
-    console.log(`block: ${block}`)
     console.log(`wins: ${wins}`)
 
     if (isNonEmptyArray(wins)) {
@@ -35,7 +40,13 @@ export default function checkForWinEpic (action$, state$) {
       const squares = length(wins) < 2 ? head(wins) : union(...wins)
       const player = board[head(squares)]
 
-      return Observable.of(gameOver(squares, player))
+      return Observable.of(
+        player === 'x' ? xWon() : oWon(),
+        gameOver(squares, player)
+      )
+      // setTimeout(() => {
+      //   return Observable.of(resetBoardClicked())
+      // }, 1000)
     }
 
     if (plays > 8) {
@@ -44,14 +55,6 @@ export default function checkForWinEpic (action$, state$) {
       // return a wrapped empty gameOver action to indicate a tie
 
       return Observable.of(gameOver([]))
-    }
-
-    if (isNonEmptyArray(block)) {
-      // blockable pattern
-      const squares = head(block)
-      const player = board[head(squares)]
-      console.log(blockAvailable(squares, player))
-      return Observable.of(blockAvailable(squares, player))
     }
 
     // do nothing (none of the above conditions met)

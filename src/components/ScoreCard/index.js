@@ -1,17 +1,20 @@
 import React from 'react'
 
-import StyledScoreCard from './style'
+import { Score as StyledScore, ScoreCard as StyledScoreCard } from './style'
 
-export default function ScoreCard (props) {
+let firstTo = 3
+
+export default function ScoreCard ({ xScore, oScore, state }) {
   return (
-    <div>
-      <h2>Score:</h2>
-      <StyledScoreCard>
-        <p score={props.scoreX}>X: {props.scoreX}</p>
-      </StyledScoreCard>
-      <StyledScoreCard>
-        <p score={props.scoreO}>O: {props.scoreO}</p>
-      </StyledScoreCard>
-    </div>
+    <StyledScoreCard>
+      <h2>Score: (first to {firstTo})</h2>
+      <StyledScore>
+        <p>X: {xScore}</p>
+      </StyledScore>
+      <StyledScore>
+        <p>O: {oScore}</p>
+        <p>{console.log(state)}</p>
+      </StyledScore>
+    </StyledScoreCard>
   )
 }
