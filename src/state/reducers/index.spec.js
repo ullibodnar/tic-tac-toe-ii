@@ -45,6 +45,8 @@ describe('state:reducers', () => {
       })
     })
 
+    it('')
+
     it('returns initialState when reset button is clicked', () => {
       expect(rootReducer(resetClicked(), {})).toMatchObject({
         type: 'RESET_CLICKED'

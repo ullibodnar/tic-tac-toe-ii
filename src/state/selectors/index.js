@@ -10,10 +10,18 @@ export function getWinningSquares ({ winningSquares }) {
   return winningSquares
 }
 
-export function getBlockableSquare ({ blockableSquare }) {
-  return blockableSquare
+export function getGameLength ({ gameLength }) {
+  return gameLength
 }
 
-export function getBlockablePlayer ({ blockablePlayer }) {
-  return blockablePlayer
+export function getOScore ({ oScore }) {
+  return oScore
+}
+
+export function getXScore ({ xScore }) {
+  return xScore
+}
+
+export function getGameLengthWinner ({ gameLengthWinner }) {
+  return gameLengthWinner
 }

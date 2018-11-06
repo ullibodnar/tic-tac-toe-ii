@@ -2,16 +2,16 @@
 
 exports[`components:Square renders the Square with the proper cursor if a click handler is provided 1`] = `
 .c0 {
-  border-color: #191919;
+  border-color: hsla(0,0%,90%,1);
   border-style: solid;
   border-width: 0 3px 3px 0;
-  cursor: default;
+  cursor: not-allowed;
   font-size: 16vh;
   font-weight: bold;
   line-height: 20vh;
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+  color: #191919;
   cursor: pointer;
 }
 
@@ -23,16 +23,17 @@ exports[`components:Square renders the Square with the proper cursor if a click 
 
 exports[`components:Square renders the Square with the proper styles for an unplayed square after game over 1`] = `
 .c0 {
-  border-color: #191919;
+  border-color: hsla(0,0%,90%,1);
   border-style: solid;
   border-width: 0 3px 3px 0;
-  cursor: default;
+  cursor: not-allowed;
   font-size: 16vh;
   font-weight: bold;
   line-height: 20vh;
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+  color: #191919;
+  color: hsla(0,0%,90%,1);
 }
 
 <div
@@ -42,17 +43,17 @@ exports[`components:Square renders the Square with the proper styles for an unpl
 
 exports[`components:Square renders the Square with the proper styles for player O in the top left square 1`] = `
 .c0 {
-  border-color: #191919;
+  border-color: hsla(0,0%,90%,1);
   border-style: solid;
   border-width: 0 3px 3px 0;
-  cursor: default;
+  cursor: not-allowed;
   font-size: 16vh;
   font-weight: bold;
   line-height: 20vh;
   text-align: center;
   text-transform: uppercase;
+  color: #191919;
   text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
-  color: #e2e1e0;
 }
 
 <div
@@ -64,16 +65,16 @@ exports[`components:Square renders the Square with the proper styles for player 
 
 exports[`components:Square renders the Square with the proper styles for player O loss 1`] = `
 .c0 {
-  border-color: #191919;
+  border-color: hsla(0,0%,90%,1);
   border-style: solid;
   border-width: 0 0 0 0;
-  cursor: default;
+  cursor: not-allowed;
   font-size: 16vh;
   font-weight: bold;
   line-height: 20vh;
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+  color: #191919;
   color: hsla(0,0%,90%,1);
 }
 
@@ -84,19 +85,39 @@ exports[`components:Square renders the Square with the proper styles for player 
 </div>
 `;
 
-exports[`components:Square renders the Square with the proper styles for player X in the bottom left square 1`] = `
+exports[`components:Square renders the Square with the proper styles for player X blockable 1`] = `
 .c0 {
-  border-color: #191919;
+  border-color: hsla(0,0%,90%,1);
   border-style: solid;
-  border-width: 0 3px 0 0;
-  cursor: default;
+  border-width: 0 0 0 0;
+  cursor: not-allowed;
   font-size: 16vh;
   font-weight: bold;
   line-height: 20vh;
   text-align: center;
   text-transform: uppercase;
+  color: #191919;
   text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
-  color: #fc3645;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`components:Square renders the Square with the proper styles for player X in the bottom left square 1`] = `
+.c0 {
+  border-color: hsla(0,0%,90%,1);
+  border-style: solid;
+  border-width: 0 3px 0 0;
+  cursor: not-allowed;
+  font-size: 16vh;
+  font-weight: bold;
+  line-height: 20vh;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fe3449;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
 }
 
 <div
@@ -108,17 +129,17 @@ exports[`components:Square renders the Square with the proper styles for player 
 
 exports[`components:Square renders the Square with the proper styles for player X in the bottom right square 1`] = `
 .c0 {
-  border-color: #191919;
+  border-color: hsla(0,0%,90%,1);
   border-style: solid;
   border-width: 0 0 0 0;
-  cursor: default;
+  cursor: not-allowed;
   font-size: 16vh;
   font-weight: bold;
   line-height: 20vh;
   text-align: center;
   text-transform: uppercase;
+  color: #fe3449;
   text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
-  color: #fc3645;
 }
 
 <div
@@ -130,17 +151,17 @@ exports[`components:Square renders the Square with the proper styles for player 
 
 exports[`components:Square renders the Square with the proper styles for player X in the top left square 1`] = `
 .c0 {
-  border-color: #191919;
+  border-color: hsla(0,0%,90%,1);
   border-style: solid;
   border-width: 0 3px 3px 0;
-  cursor: default;
+  cursor: not-allowed;
   font-size: 16vh;
   font-weight: bold;
   line-height: 20vh;
   text-align: center;
   text-transform: uppercase;
+  color: #fe3449;
   text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
-  color: #fc3645;
 }
 
 <div
@@ -152,17 +173,17 @@ exports[`components:Square renders the Square with the proper styles for player 
 
 exports[`components:Square renders the Square with the proper styles for player X in the top right square 1`] = `
 .c0 {
-  border-color: #191919;
+  border-color: hsla(0,0%,90%,1);
   border-style: solid;
   border-width: 0 0 3px 0;
-  cursor: default;
+  cursor: not-allowed;
   font-size: 16vh;
   font-weight: bold;
   line-height: 20vh;
   text-align: center;
   text-transform: uppercase;
+  color: #fe3449;
   text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
-  color: #fc3645;
 }
 
 <div
@@ -174,17 +195,18 @@ exports[`components:Square renders the Square with the proper styles for player 
 
 exports[`components:Square renders the Square with the proper styles for player X win 1`] = `
 .c0 {
-  border-color: #191919;
+  border-color: hsla(0,0%,90%,1);
   border-style: solid;
   border-width: 0 0 0 0;
-  cursor: default;
+  cursor: not-allowed;
   font-size: 16vh;
   font-weight: bold;
   line-height: 20vh;
   text-align: center;
   text-transform: uppercase;
+  color: #fe3449;
   text-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
-  color: #fc3645;
+  text-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
 }
 
 <div

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const BoardContainer = styled.div`
+  position: relative;
   display: grid;
   grid-template-areas: 'board';
   height: auto;

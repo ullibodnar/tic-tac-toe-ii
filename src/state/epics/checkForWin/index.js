@@ -4,14 +4,18 @@ import 'rxjs/add/observable/of'
 import { head, length, union } from 'ramda'
 import { isNonEmptyArray } from 'ramda-adjunct'
 
-import { getMoves, gameOver, SQUARE_CLICKED, blockAvailable } from '../..'
-import { getBoard, getWins, getBlock } from '../../../utilities'
-
-let scoreX = 0
-let scoreO = 0
+import {
+  getMoves,
+  gameOver,
+  SQUARE_CLICKED,
+  xWon,
+  oWon,
+  gameLengthMet
+} from '../..'
+import { getBoard, getWins } from '../../../utilities'
 
 export default function checkForWinEpic (action$, state$) {
-  return action$.ofType(SQUARE_CLICKED).mergeMap(({ payload }) => {
+  return action$.ofType(SQUARE_CLICKED).mergeMap(() => {
     const moves = getMoves(state$.value) // get the moves array from the store
     const plays = length(moves) // length of the moves array tells us how many plays
 
@@ -24,10 +28,8 @@ export default function checkForWinEpic (action$, state$) {
 
     const board = getBoard(moves) // convert the moves array to a board array
     const wins = getWins(board) // get zero or more winning patterns
-    const block = getBlock(board)
 
     console.log(`board: ${board}`)
-    console.log(`block: ${block}`)
     console.log(`wins: ${wins}`)
 
     if (isNonEmptyArray(wins)) {
@@ -39,12 +41,26 @@ export default function checkForWinEpic (action$, state$) {
       const player = board[head(squares)]
 
       if (player === 'x') {
-        scoreX++
-      } else {
-        scoreO++
+        return state$.value.xScore >= state$.value.gameLength - 1
+          ? Observable.of(
+              xWon(),
+              gameOver(squares, player),
+              gameLengthMet(player)
+            )
+          : Observable.of(xWon(), gameOver(squares, player))
+      } else if (player === 'o') {
+        return state$.value.oScore >= state$.value.gameLength - 1
+          ? Observable.of(
+              oWon(),
+              gameOver(squares, player),
+              gameLengthMet(player)
+            )
+          : Observable.of(oWon(), gameOver(squares, player))
       }
 
-      return Observable.of(gameOver(squares, player))
+      // setTimeout(() => {
+      //   return Observable.of(resetBoardClicked())
+      // }, 1000)
     }
 
     if (plays > 8) {
@@ -55,17 +71,7 @@ export default function checkForWinEpic (action$, state$) {
       return Observable.of(gameOver([]))
     }
 
-    if (isNonEmptyArray(block)) {
-      // blockable pattern
-      const squares = head(block)
-      const player = board[head(squares)]
-      console.log(blockAvailable(squares, player))
-      return Observable.of(blockAvailable(squares, player))
-    }
-
     // do nothing (none of the above conditions met)
     return Observable.of()
   })
 }
-
-export { scoreX, scoreO }
