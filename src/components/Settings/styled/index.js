@@ -12,4 +12,10 @@ const SettingsHeaderText = styled.h1`
 `
 SettingsHeaderText.displayName = 'SettingsHeaderText'
 
-export { SettingsHeader, SettingsHeaderText }
+const GameLengthContainer = styled.div`
+  display: flex;
+  align-items: center;
+`
+GameLengthContainer.displayName = 'GameLengthContainer'
+
+export { SettingsHeader, SettingsHeaderText, GameLengthContainer }

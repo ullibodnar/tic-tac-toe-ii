@@ -1,14 +1,13 @@
 import { connect } from 'react-redux'
 
 import ScoreCard from '../../components/ScoreCard'
-
-console.log(ScoreCard)
+import { getGameLength, getOScore, getXScore } from '../../state'
 
 function mapStateToProps (state) {
   return {
-    xScore: state.xScore,
-    oScore: state.oScore,
-    state: state
+    gameLength: getGameLength(state),
+    oScore: getOScore(state),
+    xScore: getXScore(state)
   }
 }
 

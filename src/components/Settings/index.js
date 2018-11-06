@@ -1,10 +1,18 @@
 import React from 'react'
 
-import { StyledSettings, StyledGameLengthInput } from '../styled'
+import { StyledSettings, StyledGameLengthButton } from '../styled'
 import { ResetGame } from '../../containers'
-import { SettingsHeaderText, SettingsHeader } from './styled'
+import {
+  SettingsHeaderText,
+  SettingsHeader,
+  GameLengthContainer
+} from './styled'
 
-export default function Settings ({ enterGameLength }) {
+export default function Settings ({
+  increaseGameLength,
+  decreaseGameLength,
+  gameLength
+}) {
   return (
     <StyledSettings>
       <SettingsHeader>
@@ -12,12 +20,16 @@ export default function Settings ({ enterGameLength }) {
 
         <ResetGame />
       </SettingsHeader>
-
-      <p>Game length: </p>
-      <StyledGameLengthInput
-        placeholder={'3 (default)'}
-        onBlur={e => enterGameLength(e.target.value)}
-      />
+      <GameLengthContainer>
+        <p>Game length: first to </p>
+        <StyledGameLengthButton onClick={decreaseGameLength}>
+          -
+        </StyledGameLengthButton>
+        <p>{gameLength}</p>
+        <StyledGameLengthButton onClick={increaseGameLength}>
+          +
+        </StyledGameLengthButton>
+      </GameLengthContainer>
 
     </StyledSettings>
   )

@@ -15,8 +15,4 @@ const Input = styled.input`
 `
 Input.displayName = 'StyledInput'
 
-const GameLengthInput = Input.extend`
-`
-GameLengthInput.displayName = 'StyledGameLengthInput'
-
-export { Input, GameLengthInput }
+export { Input }

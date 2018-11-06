@@ -5,7 +5,9 @@ import {
   RESET_GAME_CLICKED,
   X_WON,
   O_WON,
-  GAME_LENGTH_CHANGE
+  INCREASE_GAME_LENGTH_CLICKED,
+  DECREASE_GAME_LENGTH_CLICKED,
+  GAME_LENGTH_MET
 } from '..'
 
 function xWon () {
@@ -53,10 +55,24 @@ function resetGameClicked () {
   }
 }
 
-function gameLengthChange (gameLength) {
+function increaseGameLengthClicked () {
   return {
-    type: GAME_LENGTH_CHANGE,
-    payload: gameLength
+    type: INCREASE_GAME_LENGTH_CLICKED
+  }
+}
+
+function decreaseGameLengthClicked () {
+  return {
+    type: DECREASE_GAME_LENGTH_CLICKED
+  }
+}
+
+function gameLengthMet (winner) {
+  return {
+    type: GAME_LENGTH_MET,
+    payload: {
+      winner
+    }
   }
 }
 
@@ -67,5 +83,7 @@ export {
   resetGameClicked,
   xWon,
   oWon,
-  gameLengthChange
+  increaseGameLengthClicked,
+  decreaseGameLengthClicked,
+  gameLengthMet
 }

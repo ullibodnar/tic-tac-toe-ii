@@ -9,8 +9,8 @@ import {
   gameOver,
   SQUARE_CLICKED,
   xWon,
-  oWon
-  // resetBoardClicked
+  oWon,
+  gameLengthMet
 } from '../..'
 import { getBoard, getWins } from '../../../utilities'
 
@@ -40,10 +40,24 @@ export default function checkForWinEpic (action$, state$) {
       const squares = length(wins) < 2 ? head(wins) : union(...wins)
       const player = board[head(squares)]
 
-      return Observable.of(
-        player === 'x' ? xWon() : oWon(),
-        gameOver(squares, player)
-      )
+      if (player === 'x') {
+        return state$.value.xScore >= state$.value.gameLength - 1
+          ? Observable.of(
+              xWon(),
+              gameOver(squares, player),
+              gameLengthMet(player)
+            )
+          : Observable.of(xWon(), gameOver(squares, player))
+      } else if (player === 'o') {
+        return state$.value.oScore >= state$.value.gameLength - 1
+          ? Observable.of(
+              oWon(),
+              gameOver(squares, player),
+              gameLengthMet(player)
+            )
+          : Observable.of(oWon(), gameOver(squares, player))
+      }
+
       // setTimeout(() => {
       //   return Observable.of(resetBoardClicked())
       // }, 1000)

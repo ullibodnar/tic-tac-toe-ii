@@ -1,20 +1,24 @@
 import { connect } from 'react-redux'
 
 import Settings from '../../components/Settings'
-import { gameLengthChange } from '../../state'
+import {
+  increaseGameLengthClicked,
+  decreaseGameLengthClicked
+} from '../../state'
 
-// function mapStateToProps (state) {
-//   return {
-//     celsius: getCelsiusInput(state)
-//   }
-// }
+import { getGameLength } from '../../state'
 
-function mapDispatchToProps (dispatch) {
+function mapStateToProps (state) {
   return {
-    enterGameLength: gameLength => {
-      dispatch(gameLengthChange(gameLength))
-    }
+    gameLength: getGameLength(state)
   }
 }
 
-export default connect(null, mapDispatchToProps)(Settings)
+function mapDispatchToProps (dispatch) {
+  return {
+    increaseGameLength: () => dispatch(increaseGameLengthClicked()),
+    decreaseGameLength: () => dispatch(decreaseGameLengthClicked())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Settings)

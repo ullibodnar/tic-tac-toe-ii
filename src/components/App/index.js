@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Header, Game } from '..'
-import { Settings } from '../../containers'
+import { Header } from '..'
+import { Settings, Game } from '../../containers'
 
 export default function App () {
   return (

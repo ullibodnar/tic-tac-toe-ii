@@ -7,7 +7,10 @@ import {
   X_WON,
   O_WON,
   RESET_GAME_CLICKED,
-  GAME_LENGTH_CHANGE
+  INCREASE_GAME_LENGTH_CLICKED,
+  DECREASE_GAME_LENGTH_CLICKED,
+  gameLengthInBounds,
+  GAME_LENGTH_MET
 } from '..'
 
 const initialState = {
@@ -18,13 +21,19 @@ const initialState = {
 }
 
 function rootReducer (state = initialState, { payload = {}, type }) {
-  const { square, winners: { squares, player } = {} } = payload
+  const { square, winners: { squares, player } = {}, winner } = payload
 
   switch (type) {
-    case GAME_LENGTH_CHANGE:
+    case INCREASE_GAME_LENGTH_CLICKED:
       return {
         ...state,
-        gameLength: payload
+        gameLength: gameLengthInBounds(state, state.gameLength + 1)
+      }
+
+    case DECREASE_GAME_LENGTH_CLICKED:
+      return {
+        ...state,
+        gameLength: gameLengthInBounds(state, state.gameLength - 1)
       }
 
     case X_WON:
@@ -58,6 +67,12 @@ function rootReducer (state = initialState, { payload = {}, type }) {
         moves: [],
         winningSquares: undefined,
         winningPlayer: ''
+      }
+
+    case GAME_LENGTH_MET:
+      return {
+        ...state,
+        gameLengthWinner: winner
       }
 
     case RESET_GAME_CLICKED:

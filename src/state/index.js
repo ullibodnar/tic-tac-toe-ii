@@ -5,7 +5,9 @@ import {
   resetGameClicked,
   xWon,
   oWon,
-  gameLengthChange
+  increaseGameLengthClicked,
+  decreaseGameLengthClicked,
+  gameLengthMet
 } from './actions'
 
 import {
@@ -15,12 +17,24 @@ import {
   RESET_GAME_CLICKED,
   X_WON,
   O_WON,
-  GAME_LENGTH_CHANGE
+  INCREASE_GAME_LENGTH_CLICKED,
+  DECREASE_GAME_LENGTH_CLICKED,
+  GAME_LENGTH_MET
 } from './constants'
 
 import { initialState, rootReducer } from './reducers'
 
-import { getMoves, getWinningPlayer, getWinningSquares } from './selectors'
+import {
+  getMoves,
+  getWinningPlayer,
+  getWinningSquares,
+  getGameLength,
+  getOScore,
+  getXScore,
+  getGameLengthWinner
+} from './selectors'
+
+import { gameLengthInBounds } from './domain'
 
 import configureStore from './store'
 
@@ -31,6 +45,10 @@ export {
   getMoves,
   getWinningPlayer,
   getWinningSquares,
+  getGameLength,
+  getXScore,
+  getOScore,
+  getGameLengthWinner,
   initialState,
   rootReducer,
   SQUARE_CLICKED,
@@ -43,6 +61,11 @@ export {
   O_WON,
   xWon,
   oWon,
-  GAME_LENGTH_CHANGE,
-  gameLengthChange
+  INCREASE_GAME_LENGTH_CLICKED,
+  DECREASE_GAME_LENGTH_CLICKED,
+  increaseGameLengthClicked,
+  decreaseGameLengthClicked,
+  gameLengthInBounds,
+  GAME_LENGTH_MET,
+  gameLengthMet
 }

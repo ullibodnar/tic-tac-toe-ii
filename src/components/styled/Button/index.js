@@ -36,4 +36,25 @@ const ButtonCritical = Button.extend`
 `
 ButtonCritical.displayName = 'StyledButtonCritical'
 
-export { Button, ButtonCritical, ResetBoard }
+const GameLengthButton = styled.button`
+  border-radius: 0;
+  width: 25px;
+  font-size: 22px;
+  background: #191919;
+  color: white;
+  border: none;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  outline: none;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: ${props => (props.children === '-' ? 10 : 0)}px;
+}
+
+
+
+`
+GameLengthButton.displayName = 'StyledGameLengthButton'
+
+export { Button, ButtonCritical, ResetBoard, GameLengthButton }

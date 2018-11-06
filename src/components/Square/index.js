@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import { isUndefined } from 'ramda-adjunct'
 
 const StyledSquare = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-color: hsla(0, 0%, 90%, 1);
   border-style: solid;
   border-width: 0 ${({ index }) => (index % 3 === 2 ? 0 : '3px')}
@@ -10,8 +13,6 @@ const StyledSquare = styled.div`
   cursor: not-allowed;
   font-size: 16vh;
   font-weight: bold;
-  line-height: 20vh;
-  text-align: center;
   text-transform: uppercase;
   color: ${({ player }) => (player === 'x' ? '#fe3449' : '#191919')}; {/*#80FFFF*/}
   /*transition: all .3s cubic-bezier(.25,.8,.25,1); <-- Would be nice to have some clean transitions soon */
