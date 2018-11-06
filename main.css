@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo|Bitter|Righteous|Russo One');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Arvo', Arial, Helvetica, sans-serif;
+}
+
+body {
+  background :hsla(0, 0%, 90%, 1);
+}
