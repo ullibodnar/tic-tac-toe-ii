@@ -2,6 +2,7 @@
   "name": "tic-tac-toe-ii",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://ullibodnar.github.io/tic-tac-toe-ii",
   "dependencies": {
     "ramda": "^0.25.0",
     "ramda-adjunct": "^2.9.0",
@@ -22,12 +23,15 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "format": "prettier-standard 'src/**/*.js'",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
+    "gh-pages": "^2.0.1",
     "jest-enzyme": "^6.0.2",
     "jest-styled-components": "^5.0.1",
     "prettier-standard": "^8.0.1",
